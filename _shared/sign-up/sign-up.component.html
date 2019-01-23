@@ -1,0 +1,30 @@
+ <div class="main-wrap">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="logo text-center"><a routerLink="/"><img src="/assets/img/logo.svg" alt=""></a></div>
+        <span class="you-txt">You are</span>
+        <div class="main-area-tabs">
+          <ul id="clothingnav1" class="nav nav-tabs my-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link " [routerLinkActive]="['active']" routerLink="/signupbrand" id="hometab1" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                <div class="img-hold">
+                  <img src="/assets/img/office.svg" alt="" class="office">
+                  <div class="tick"><img src="/assets/img/tick.png" alt=""></div>
+                </div>
+                <span>Brand</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLinkActive]="['active']" routerLink="/signupindividual" role="tab" id="hatstab1" data-toggle="tab" aria-controls="hats">
+                <div class="img-hold">
+                  <img src="/assets/img/men.svg" alt="" class="men">
+                  <div class="tick"><img src="/assets/img/tick.png" alt=""></div>
+                </div>
+                <span>Individual</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,108 @@
+<div class="page-three page-four">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center"><br><br>
+                <a routerLink="/"><img src="assets/img/logo.svg" alt=""></a>
+              </div>
+              <ul class="spin-creat">
+                <li><img src="assets/img/spin.svg" alt=""></li>
+                <li>Create a token</li>
+              </ul>
+                <div class="form-area">
+                <form [formGroup]="createTokenForm" (ngSubmit)="onSubmit()">
+                  <div class="relative">
+                    <input placeholder="Name your token" type="text" formControlName="name" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.pattern">Please remove the spaces</div>
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="relative ">
+                    <input placeholder="Abbreviation" type="text" formControlName="abbreviation" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.abbreviation.errors }" />
+                    <div *ngIf="submitted && f.abbreviation.errors" class="invalid-feedback">
+                      <div *ngIf="f.abbreviation.errors.required">Abbreviation is required</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="relative">
+                    <input placeholder="Site URL" type="url"  formControlName="url" pattern="https?://.+" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.url.errors }" />
+                    <div *ngIf="submitted && f.url.errors" class="invalid-feedback">
+                    <div *ngIf="f.url.errors.pattern">Please enter a valid URL</div>
+                      <div *ngIf="f.url.errors.required">Site URL is Required</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="relative mb-box">
+                  <textarea type="text" formControlName="description" class="form-control" placeholder="Description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                  <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                    <div *ngIf="f.description.errors.required">Description is required</div>
+                  </div>
+                  <img src="assets/img/pen.svg" alt="" class="pen">
+                </div>
+
+                  <label id="bb" class="type-file uplod-btn">
+                    <input type="file" id="File" size="60">
+                    <ul>
+                      <li>
+                        <div class="glry-img"><img src="assets/img/file.svg" alt=""></div>
+                        <span>Upload Logo</span>
+                      </li>
+                    </ul>
+                  </label>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                      <i class="icon-dolor"></i> <span>E-commerce</span>
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" disabled  name="options" id="option2" autocomplete="off" >
+                      <i class="icon-shop"></i> <span>In-Store</span>
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" disabled name="options" id="option3" autocomplete="off" >
+                      <i class="icon-store"></i> <span>Other</span>
+                    </label>
+                  </div>
+                  <div class="relative">
+                    <input placeholder="Total Supply" type="number" formControlName="totalSupply" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.totalSupply.errors }" />
+                    <div *ngIf="submitted && f.totalSupply.errors" class="invalid-feedback">
+                      <div *ngIf="f.totalSupply.errors.required">Total Supply is required</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="relative">
+                    <input placeholder="USD Equivalent Amount" type="number" min="0.01" id="usdamount"  formControlName="amount"  class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+                    <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                      <div *ngIf="f.url.errors.required">Please Enter Dollar amount equivalent</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+                  <div class="relative">
+                    <br>
+                    <button type="submit" class="submit">Create It</button>
+                    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                  </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+

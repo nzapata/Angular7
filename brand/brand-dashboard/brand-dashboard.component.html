@@ -1,0 +1,43 @@
+<div class="page-three page-four wallet">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap wrap-two">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center mb-0"><a><img src="assets/img/logo.svg" alt=""></a></div>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show" routerLinkActive="active"  role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="jhon-box">
+                    <h3>{{currentBrand.name}}</h3>
+                    <div class="white-box">
+                      <h4>Total Avaliable tokens</h4>
+                      <span>{{availableToken.quantity}} {{availableToken.name}}</span> </div>
+                    <a routerLink="/" class="botm-arrow "><i class="fas fa-sort-down"></i></a>
+                    <h3 class="text-center">Running Campaigns</h3>
+                    <hr>
+                    <ul class="token-number" *ngFor="let campaign of campaigns"  >
+                      <li>
+                        {{campaign.name}}
+                      </li>
+                      <li><button class="btn-primary" (click)="campaignFunction()" >Campaign Info</button></li>
+                    </ul>
+                    <h3 class="text-center">Other Balances</h3>
+                    <ul class="token-number mb-0">
+                      <li>TRX</li>
+                      <li><span>{{availableTrx}}</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<footer>
+  <app-nav-brand></app-nav-brand>
+</footer>

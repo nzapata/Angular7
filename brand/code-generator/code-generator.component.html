@@ -1,0 +1,42 @@
+<div class="page-three page-four page-five">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center"><a routerLink="/"><img src="/assets/img/logo.svg" alt=""></a></div>
+              <div class="main-slider">
+                <div class="form-main item">
+                  <ul class="spin-creat enter">
+                    <li class="text-center">
+                      Generate Redemption Codes
+                    </li>
+                  </ul>
+                  <h3 class="text-center">Enter Quantity To Generate </h3>
+                  <div class="relative love-token">
+                    <form [formGroup]="redemptionCodesForm" (ngSubmit)="onSubmit()">
+                      <input type="number" min="1" formControlName="quantity" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }" />
+                      <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                        <div *ngIf="f.quantity.errors.required">Quantity is required</div>
+                      </div>
+                      <img src="/assets/img/pen.svg" alt="" class="pen">
+                      <br>
+                      <div class="relative">
+                        <button type="submit" class="submit">Next</button>
+                        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <app-nav-brard></app-nav-brard>
+  </div>
+</div>
+

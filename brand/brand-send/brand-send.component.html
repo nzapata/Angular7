@@ -1,0 +1,80 @@
+<div class="page-three page-four wallet">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap wrap-two">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center mb-0"><img src="assets/img/logo.svg" alt=""></div>
+              <div class="tab-content" id="pills-tabContent">
+                <div>
+                  <div class="recive-tab">
+                    <ul class="nav nav-pills mb-3" id="pills-tab1" role="tablist">
+                      <li class="nav-item"><a class="nav-link"   id="pills-home-tab1" data-toggle="pill"
+                                              routerLink="/brand/receivetoken" role="tab" aria-controls="pills-home"
+                                              aria-selected="true">
+                        <i class="icon-one-arrow"  routerLink="/brand/receivetoken"></i> <span>Receive</span> </a></li>
+                      <li class="nav-item"><a class="nav-link" routerLinkActive="active" id="pills-profile-tab1" data-toggle="pill"
+                                              routerLink="/brand/sendtoken" role="tab" aria-controls="pills-profile"
+                                              aria-selected="false">
+                        <i class="icon-arrow-two"></i> <span>Send</span> </a></li>
+                    </ul>
+                  </div>
+                  <div class="tab-pane" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="send-data">
+                      <div class="token-slect">
+                        <div class="form-group">
+                          <form [formGroup]="sendbrandForm" (ngSubmit)="onSubmit()">
+                            <input type="text" formControlName="amount" min="1" class="form-control"
+                                   placeholder="Amount to Send"
+                                   [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+                            <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                              <div *ngIf="f.amount.errors.required">Please Enter a valid Amount</div>
+                            </div>
+                            <br />
+                            <h6 class="text-center">Select token</h6>
+                             <select class="form-control">
+                            <option name="select token" *ngFor="let token of tokens" [ngValue]="token.id">
+                                {{ token.name}}
+                              </option>
+                            </select>
+
+                            <!-- End  dropdown -->
+                            <div class="enter-id">
+                              <br>
+                              <span>Enter Wallet ID</span>
+                              <div>
+                                <div>
+                                  <input type="text" class="text-center form-control"
+                                         placeholder="Enter Trx Address" formControlName="sendTo"
+                                         id="sendAmount" [ngClass]="{ 'is-invalid': submitted && f.sendTo.errors }" />
+                                  <div *ngIf="submitted && f.sendTo.errors" class="invalid-feedback">
+                                    <div *ngIf="f.sendTo.errors.required">Please Enter a valid Trx address</div>
+                                  </div>
+                                  <img src="assets/img/pen.svg" alt="" class="pen">
+                                </div>
+
+                                <!--<a routerLink="/" class="scan-code">-->
+                                <!--<img src="assets/img/camera.svg" alt="">-->
+                                <!--<span>Scan QR</span> </a>-->
+
+                              </div>
+                            </div>
+                            <div class="spin-hold text-center rward">
+                              <button type="submit" class="submit" disabled>Send</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <app-nav-brand></app-nav-brand>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="page-three page-four page-five">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center"><a routerLink="/"><img src="/assets/img/logo.svg" alt=""></a></div>
+              <div class="main-slider">
+                <div class="form-main item">
+                <ul class="spin-creat">
+                  <li><img src="/assets/img/spin-two.svg" alt=""></li>
+                  <li>Decide how it’s distributed</li>
+                </ul>
+                <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
+
+                  <div class="relative">
+                    <input placeholder="Enter Campaign Name" type="text"  formControlName="campaignName" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.campaignName.errors }" />
+                    <div *ngIf="submitted && f.campaignName.errors" class="invalid-feedback">
+                      <div *ngIf="f.campaignName.errors.required">Need Campaign Name</div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="relative">
+                    <input placeholder="How many token per redemption code " type="text"  formControlName="tokenPerRedemptionCode"  class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.tokenPerRedemptionCode.errors }" />
+                    <div *ngIf="submitted && f.tokenPerRedemptionCode.errors" class="invalid-feedback">
+                      <div *ngIf="f.tokenPerRedemptionCode.errors.required">Amount per Redemption Code </div>
+                    </div>
+                    <img src="assets/img/pen.svg" alt="" class="pen">
+                  </div>
+
+                  <div class="main-radio-box">
+                    <label class="container-1">
+                      <input type="radio" name="purchases" checked formControlName="purchases" [ngClass]="{ 'is-invalid': submitted && f.purchases.errors }" />
+                      <div *ngIf="submitted && f.purchases.errors" class="invalid-feedback">
+                        <div *ngIf="f.purchases.errors.required">purchases required</div>
+                      </div>
+                      <span class="checkmark"></span> <span>For Purchases</span> </label>
+                  </div>
+
+                  <div class="main-radio-box">
+                    <label class="container-1">
+                      <input type="radio" disabled name="radio">
+                      <span class="checkmark"></span> <span>Social Media Likes / Shares</span> </label>
+                  </div>
+
+                  <div class="main-radio-box">
+                    <label class="container-1">
+                      <input type="radio" disabled name="radio" >
+                      <span class="checkmark"></span> <span>Referrals</span> </label>
+                  </div>
+
+                  <div class="main-radio-box last-box">
+                    <label class="container-1">
+                      <input type="radio" disabled name="radio" >
+                      <span class="checkmark"></span> <span>Membership Anniversary</span> </label>
+                  </div>
+
+                  <div class="relative">
+                    <button type="submit" class="submit">Create Campaign</button>
+                    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+</div>
+

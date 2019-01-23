@@ -1,0 +1,39 @@
+<div class="page-three page-four wallet">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+            <div class="col-lg-12">
+              <div class="logo text-center mb-0"><a><img src="assets/img/logo.svg" alt=""></a></div>
+              <div class="jhon-box">
+              <h3 class="text-center active">Campaigns</h3>
+              </div>
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Created Date</th>
+                  <th scope="col">Redemption Code</th>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Redemption Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let redemptionCode of redemptionCodes; let i = index" [attr.data-index]="i">
+                  <th scope="row">{{i}}</th>
+                  <td>{{redemptionCode.createdDate}}</td>
+                  <td>{{redemptionCode.redemptionCode}}</td>
+                  <td>{{redemptionCode.customerId}}</td>
+                  <td>{{redemptionCode.redeemedDate}}</td>
+
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+      <app-nav-brand></app-nav-brand>
+    </section>
+  </div>
+</div>
+
+

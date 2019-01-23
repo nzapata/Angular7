@@ -1,0 +1,55 @@
+<div class="page-three page-four wallet">
+  <div class="wrapper">
+    <section class="main-sec">
+      <div class="container">
+        <div class="main-wrap wrap-two">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="logo text-center mb-0"><img src="assets/img/logo.svg" alt=""></div>
+              <div class="tab-content" id="pills-tabContent">
+                <div>
+                  <div class="recive-tab">
+                    <!--<ul class="nav nav-pills mb-3" id="pills-tab1" role="tablist">
+                      <li class="nav-item"> <a class="nav-link" routerLinkActive="active" id="pills-home-tab1" data-toggle="pill" routerLink="/brand/receivetoken"  role="tab" aria-controls="pills-home" aria-selected="true">
+                        <i class="icon-one-arrow" routerLink="/brand/receivetoken"></i> <span>Receive</span> </a> </li>
+                      <li class="nav-item"> <a class="nav-link" id="pills-profile-tab1" data-toggle="pill" routerLink="/brand/sendtoken" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <i class="icon-arrow-two"></i> <span>Send</span> </a> </li>
+                    </ul>-->
+                  </div>
+                  <div class="tab-content" id="pills-tab1Content">
+                    <div id="pills-home1" role="tabpanel" aria-labelledby="pills-home-tab">
+                      <div class="recive-data">
+                        <div class="id-box text-center">
+                          <span>Your Wallet ID</span>
+                          <div class="id-data" >
+                            <h6 ngxClipboard>{{currentBrand.publicKeyBase58}}</h6>
+                          </div>
+                        </div>
+
+                        <div class="relative">
+                          <br>
+                          <button type="submit" class="submit" ngxClipboard [cbContent]="currentBrand.publicKeyBase58">Copy Public Key</button>
+                          <div class="qr-code text-center">
+                            <ngx-qrcode
+                              [qrc-element-type]="elementType"
+                              [qrc-value] = "currentBrand.publicKeyBase58"
+                              qrc-class = "aclass"
+                              qrc-errorCorrectionLevel = "L">
+                            </ngx-qrcode>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <app-nav-brand></app-nav-brand>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
